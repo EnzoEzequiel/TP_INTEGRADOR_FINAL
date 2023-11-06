@@ -66,7 +66,14 @@ namespace TP_FINAL
         {
             FrmMascota frmMascota = new FrmMascota();
             frmMascota.Show();
-            this.Hide();
+            this.Close();
+        }
+
+        private void btnVolverMenu_Click(object sender, EventArgs e)
+        {
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.Show();
+            this.Close();
         }
     }
 }

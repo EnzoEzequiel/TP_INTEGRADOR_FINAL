@@ -40,6 +40,7 @@
             button1=new Button();
             button2=new Button();
             pictureBox1=new PictureBox();
+            btnVolverMenu=new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -156,12 +157,23 @@
             pictureBox1.TabIndex=11;
             pictureBox1.TabStop=false;
             // 
+            // btnVolverMenu
+            // 
+            btnVolverMenu.Location=new Point(313, 192);
+            btnVolverMenu.Name="btnVolverMenu";
+            btnVolverMenu.Size=new Size(112, 23);
+            btnVolverMenu.TabIndex=12;
+            btnVolverMenu.Text="Volver";
+            btnVolverMenu.UseVisualStyleBackColor=true;
+            btnVolverMenu.Click+=btnVolverMenu_Click;
+            // 
             // FrmCliente
             // 
             AutoScaleDimensions=new SizeF(7F, 15F);
             AutoScaleMode=AutoScaleMode.Font;
             BackColor=SystemColors.ActiveCaption;
             ClientSize=new Size(504, 241);
+            Controls.Add(btnVolverMenu);
             Controls.Add(pictureBox1);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -195,5 +207,6 @@
         private Button button1;
         private Button button2;
         private PictureBox pictureBox1;
+        private Button btnVolverMenu;
     }
 }

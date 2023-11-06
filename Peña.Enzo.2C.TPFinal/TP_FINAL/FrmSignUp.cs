@@ -7,6 +7,12 @@ namespace TP_FINAL
             InitializeComponent();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FrmLogin frmLogin = new FrmLogin();
+            frmLogin.Show();
+            this.Close();
+        }
     }
 
 }
