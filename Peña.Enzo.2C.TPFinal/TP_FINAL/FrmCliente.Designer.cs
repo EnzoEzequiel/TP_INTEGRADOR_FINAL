@@ -39,13 +39,15 @@
             lblAlta=new Label();
             button1=new Button();
             button2=new Button();
+            pictureBox1=new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize=true;
             label1.Font=new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location=new Point(57, 30);
+            label1.Location=new Point(99, 26);
             label1.Name="label1";
             label1.Size=new Size(142, 32);
             label1.TabIndex=0;
@@ -54,18 +56,20 @@
             // label2
             // 
             label2.AutoSize=true;
-            label2.Location=new Point(57, 79);
+            label2.Font=new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location=new Point(12, 75);
             label2.Name="label2";
-            label2.Size=new Size(116, 15);
+            label2.Size=new Size(197, 25);
             label2.TabIndex=1;
-            label2.Text="Estado de mascota/s";
+            label2.Text="Estado de mascota/s:";
             // 
             // label3
             // 
             label3.AutoSize=true;
+            label3.Font=new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location=new Point(313, 79);
             label3.Name="label3";
-            label3.Size=new Size(103, 15);
+            label3.Size=new Size(142, 21);
             label3.TabIndex=2;
             label3.Text="Lista de mascotas:";
             // 
@@ -81,7 +85,7 @@
             // 
             lblNombreCliente.AutoSize=true;
             lblNombreCliente.Font=new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNombreCliente.Location=new Point(205, 30);
+            lblNombreCliente.Location=new Point(238, 28);
             lblNombreCliente.Name="lblNombreCliente";
             lblNombreCliente.Size=new Size(165, 30);
             lblNombreCliente.TabIndex=4;
@@ -90,7 +94,7 @@
             // label4
             // 
             label4.AutoSize=true;
-            label4.Location=new Point(57, 114);
+            label4.Location=new Point(17, 107);
             label4.Name="label4";
             label4.Size=new Size(58, 15);
             label4.TabIndex=5;
@@ -99,7 +103,7 @@
             // label5
             // 
             label5.AutoSize=true;
-            label5.Location=new Point(57, 150);
+            label5.Location=new Point(17, 146);
             label5.Name="label5";
             label5.Size=new Size(76, 15);
             label5.TabIndex=6;
@@ -108,7 +112,7 @@
             // lblEnfermo
             // 
             lblEnfermo.AutoSize=true;
-            lblEnfermo.Location=new Point(146, 114);
+            lblEnfermo.Location=new Point(106, 110);
             lblEnfermo.Name="lblEnfermo";
             lblEnfermo.Size=new Size(87, 15);
             lblEnfermo.TabIndex=7;
@@ -117,7 +121,7 @@
             // lblAlta
             // 
             lblAlta.AutoSize=true;
-            lblAlta.Location=new Point(146, 150);
+            lblAlta.Location=new Point(106, 146);
             lblAlta.Name="lblAlta";
             lblAlta.Size=new Size(63, 15);
             lblAlta.TabIndex=8;
@@ -134,7 +138,7 @@
             // 
             // button2
             // 
-            button2.Location=new Point(57, 194);
+            button2.Location=new Point(17, 190);
             button2.Name="button2";
             button2.Size=new Size(171, 23);
             button2.TabIndex=10;
@@ -142,12 +146,23 @@
             button2.UseVisualStyleBackColor=true;
             button2.Click+=button2_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image=Properties.Resources.user__2_;
+            pictureBox1.Location=new Point(0, -1);
+            pictureBox1.Name="pictureBox1";
+            pictureBox1.Size=new Size(93, 73);
+            pictureBox1.SizeMode=PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex=11;
+            pictureBox1.TabStop=false;
+            // 
             // FrmCliente
             // 
             AutoScaleDimensions=new SizeF(7F, 15F);
             AutoScaleMode=AutoScaleMode.Font;
             BackColor=SystemColors.ActiveCaption;
             ClientSize=new Size(504, 241);
+            Controls.Add(pictureBox1);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(lblAlta);
@@ -160,7 +175,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name="FrmCliente";
-            Text="Form1";
+            Text="Frm cliente";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -178,5 +194,6 @@
         private Label lblAlta;
         private Button button1;
         private Button button2;
+        private PictureBox pictureBox1;
     }
 }

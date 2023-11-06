@@ -59,56 +59,60 @@
             // label1
             // 
             label1.AutoSize=true;
+            label1.Font=new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location=new Point(326, 26);
             label1.Name="label1";
-            label1.Size=new Size(51, 15);
+            label1.Size=new Size(86, 25);
             label1.TabIndex=1;
             label1.Text="Nombre";
             // 
             // label2
             // 
             label2.AutoSize=true;
+            label2.Font=new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location=new Point(328, 98);
             label2.Name="label2";
-            label2.Size=new Size(31, 15);
+            label2.Size=new Size(53, 25);
             label2.TabIndex=2;
             label2.Text="Raza";
             // 
             // label3
             // 
             label3.AutoSize=true;
+            label3.Font=new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label3.Location=new Point(327, 134);
             label3.Name="label3";
-            label3.Size=new Size(32, 15);
+            label3.Size=new Size(56, 25);
             label3.TabIndex=3;
             label3.Text="Sexo";
             // 
             // label4
             // 
             label4.AutoSize=true;
-            label4.Location=new Point(326, 172);
+            label4.Font=new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location=new Point(328, 167);
             label4.Name="label4";
-            label4.Size=new Size(33, 15);
+            label4.Size=new Size(56, 25);
             label4.TabIndex=4;
             label4.Text="Edad";
             // 
             // textBox1
             // 
-            textBox1.Location=new Point(458, 23);
+            textBox1.Location=new Point(425, 31);
             textBox1.Name="textBox1";
             textBox1.Size=new Size(100, 23);
             textBox1.TabIndex=5;
             // 
             // textBox2
             // 
-            textBox2.Location=new Point(458, 98);
+            textBox2.Location=new Point(425, 103);
             textBox2.Name="textBox2";
             textBox2.Size=new Size(100, 23);
             textBox2.TabIndex=6;
             // 
             // textBox4
             // 
-            textBox4.Location=new Point(458, 169);
+            textBox4.Location=new Point(425, 169);
             textBox4.Name="textBox4";
             textBox4.Size=new Size(100, 23);
             textBox4.TabIndex=8;
@@ -149,15 +153,16 @@
             // label5
             // 
             label5.AutoSize=true;
+            label5.Font=new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label5.Location=new Point(328, 64);
             label5.Name="label5";
-            label5.Size=new Size(46, 15);
+            label5.Size=new Size(76, 25);
             label5.TabIndex=12;
             label5.Text="Especie";
             // 
             // textBox5
             // 
-            textBox5.Location=new Point(458, 64);
+            textBox5.Location=new Point(425, 69);
             textBox5.Name="textBox5";
             textBox5.Size=new Size(100, 23);
             textBox5.TabIndex=13;
@@ -165,7 +170,7 @@
             // radioButton1
             // 
             radioButton1.AutoSize=true;
-            radioButton1.Location=new Point(447, 140);
+            radioButton1.Location=new Point(414, 140);
             radioButton1.Name="radioButton1";
             radioButton1.Size=new Size(62, 19);
             radioButton1.TabIndex=14;
@@ -176,7 +181,7 @@
             // radioButton2
             // 
             radioButton2.AutoSize=true;
-            radioButton2.Location=new Point(525, 140);
+            radioButton2.Location=new Point(492, 140);
             radioButton2.Name="radioButton2";
             radioButton2.Size=new Size(68, 19);
             radioButton2.TabIndex=15;
@@ -205,7 +210,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name="FrmMascota";
-            Text="Form3";
+            Text="Frm Mascota";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

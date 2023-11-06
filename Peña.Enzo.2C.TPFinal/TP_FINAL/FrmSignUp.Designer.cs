@@ -39,9 +39,9 @@
             button1=new Button();
             button3=new Button();
             button4=new Button();
-            comboBox1=new ComboBox();
-            label4=new Label();
             label5=new Label();
+            label4=new Label();
+            textBox4=new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -61,7 +61,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location=new Point(451, 101);
+            textBox3.Location=new Point(451, 129);
             textBox3.Name="textBox3";
             textBox3.Size=new Size(225, 23);
             textBox3.TabIndex=3;
@@ -82,29 +82,29 @@
             label1.Font=new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location=new Point(263, 42);
             label1.Name="label1";
-            label1.Size=new Size(91, 25);
+            label1.Size=new Size(86, 25);
             label1.TabIndex=5;
-            label1.Text="Nombre:";
+            label1.Text="Nombre";
             // 
             // label2
             // 
             label2.AutoSize=true;
             label2.Font=new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location=new Point(260, 72);
+            label2.Location=new Point(263, 72);
             label2.Name="label2";
-            label2.Size=new Size(170, 25);
+            label2.Size=new Size(160, 25);
             label2.TabIndex=6;
-            label2.Text="Mail de contacto: ";
+            label2.Text="Mail de contacto";
             // 
             // label3
             // 
             label3.AutoSize=true;
             label3.Font=new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location=new Point(260, 99);
+            label3.Location=new Point(263, 129);
             label3.Name="label3";
-            label3.Size=new Size(94, 25);
+            label3.Size=new Size(89, 25);
             label3.TabIndex=7;
-            label3.Text="Telefono:";
+            label3.Text="Telefono";
             // 
             // button1
             // 
@@ -139,24 +139,6 @@
             button4.TextImageRelation=TextImageRelation.ImageBeforeText;
             button4.UseVisualStyleBackColor=true;
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled=true;
-            comboBox1.Location=new Point(451, 129);
-            comboBox1.Name="comboBox1";
-            comboBox1.Size=new Size(225, 23);
-            comboBox1.TabIndex=14;
-            // 
-            // label4
-            // 
-            label4.AutoSize=true;
-            label4.Font=new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location=new Point(260, 127);
-            label4.Name="label4";
-            label4.Size=new Size(185, 25);
-            label4.TabIndex=15;
-            label4.Text="Turno de atencion: ";
-            // 
             // label5
             // 
             label5.AutoSize=true;
@@ -167,15 +149,32 @@
             label5.TabIndex=16;
             label5.Text="Favor de ingresar los datos del usuario nuevo";
             // 
+            // label4
+            // 
+            label4.AutoSize=true;
+            label4.Font=new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location=new Point(263, 102);
+            label4.Name="label4";
+            label4.Size=new Size(113, 25);
+            label4.TabIndex=17;
+            label4.Text="Contraseña";
+            // 
+            // textBox4
+            // 
+            textBox4.Location=new Point(451, 100);
+            textBox4.Name="textBox4";
+            textBox4.Size=new Size(225, 23);
+            textBox4.TabIndex=18;
+            // 
             // FrmSignUp
             // 
             AutoScaleDimensions=new SizeF(7F, 15F);
             AutoScaleMode=AutoScaleMode.Font;
             BackColor=SystemColors.ActiveCaption;
             ClientSize=new Size(684, 254);
-            Controls.Add(label5);
+            Controls.Add(textBox4);
             Controls.Add(label4);
-            Controls.Add(comboBox1);
+            Controls.Add(label5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button1);
@@ -187,7 +186,7 @@
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Name="FrmSignUp";
-            Text="Form1";
+            Text="Frm Cliente Nuevo";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -204,8 +203,8 @@
         private Button button1;
         private Button button3;
         private Button button4;
-        private ComboBox comboBox1;
-        private Label label4;
         private Label label5;
+        private Label label4;
+        private TextBox textBox4;
     }
 }
