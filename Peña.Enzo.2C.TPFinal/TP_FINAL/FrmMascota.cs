@@ -1,5 +1,6 @@
 ﻿using LibreriaClases;
 using LibreriaClases.Entidades;
+using LibreriaClases.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,12 @@ namespace TP_FINAL
 
         private void btnAgregarMascota_Click(object sender, EventArgs e)
         {
+            IVeterinariaRepository repository = new VeterinariaRepository();
+
+            // Ejemplo de agregar un nuevo animal
+            Animal nuevoAnimal = new Animal { Nombre = "Firulais", Especie = "Perro", FechaNacimiento = DateTime.Now };
+            repository.AgregarAnimal(nuevoAnimal);
+
             Animal nuevaMascota = new Animal
             {
                 //Nombre = txtNombreMascota.Text,

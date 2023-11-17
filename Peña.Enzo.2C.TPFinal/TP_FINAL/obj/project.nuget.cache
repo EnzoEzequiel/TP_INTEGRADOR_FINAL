@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LYQQLBBb2Zgr+jz+IM5pGfH24uyKdBUSiMYPyw6Bq6x+eA9t4Fp6kPAN/wTFm5luJtEkCU5v0mpWY2NoDtOzAQ==",
+  "dgSpecHash": "S++G3zwrU02z/zZOE3kLY29/tntYbGNbwl8M9pUP4w8W61NEbLY2Mr+Etqx5114tkZ8W7dTKqq1FpKqwYJq7pw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\enzoe\\Desktop\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\TP_FINAL\\TP_FINAL.csproj",
+  "projectFilePath": "C:\\Users\\enzoe\\Desktop\\Docs\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\TP_FINAL\\TP_FINAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\enzoe\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\enzoe\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

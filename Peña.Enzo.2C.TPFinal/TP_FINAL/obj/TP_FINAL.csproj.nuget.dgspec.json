@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\enzoe\\Desktop\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\TP_FINAL\\TP_FINAL.csproj": {}
+    "C:\\Users\\enzoe\\Desktop\\Docs\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\TP_FINAL\\TP_FINAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\enzoe\\Desktop\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\LibreriaClases\\LibreriaClases.csproj": {
+    "C:\\Users\\enzoe\\Desktop\\Docs\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\LibreriaClases\\LibreriaClases.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\enzoe\\Desktop\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\LibreriaClases\\LibreriaClases.csproj",
+        "projectUniqueName": "C:\\Users\\enzoe\\Desktop\\Docs\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\LibreriaClases\\LibreriaClases.csproj",
         "projectName": "LibreriaClases",
-        "projectPath": "C:\\Users\\enzoe\\Desktop\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\LibreriaClases\\LibreriaClases.csproj",
+        "projectPath": "C:\\Users\\enzoe\\Desktop\\Docs\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\LibreriaClases\\LibreriaClases.csproj",
         "packagesPath": "C:\\Users\\enzoe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\enzoe\\Desktop\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\LibreriaClases\\obj\\",
+        "outputPath": "C:\\Users\\enzoe\\Desktop\\Docs\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\LibreriaClases\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\enzoe\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\enzoe\\Desktop\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\TP_FINAL\\TP_FINAL.csproj": {
+    "C:\\Users\\enzoe\\Desktop\\Docs\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\TP_FINAL\\TP_FINAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\enzoe\\Desktop\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\TP_FINAL\\TP_FINAL.csproj",
+        "projectUniqueName": "C:\\Users\\enzoe\\Desktop\\Docs\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\TP_FINAL\\TP_FINAL.csproj",
         "projectName": "TP_FINAL",
-        "projectPath": "C:\\Users\\enzoe\\Desktop\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\TP_FINAL\\TP_FINAL.csproj",
+        "projectPath": "C:\\Users\\enzoe\\Desktop\\Docs\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\TP_FINAL\\TP_FINAL.csproj",
         "packagesPath": "C:\\Users\\enzoe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\enzoe\\Desktop\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\TP_FINAL\\obj\\",
+        "outputPath": "C:\\Users\\enzoe\\Desktop\\Docs\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\TP_FINAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\enzoe\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\enzoe\\Desktop\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\LibreriaClases\\LibreriaClases.csproj": {
-                "projectPath": "C:\\Users\\enzoe\\Desktop\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\LibreriaClases\\LibreriaClases.csproj"
+              "C:\\Users\\enzoe\\Desktop\\Docs\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\LibreriaClases\\LibreriaClases.csproj": {
+                "projectPath": "C:\\Users\\enzoe\\Desktop\\Docs\\TP_INTEGRADOR_FINAL\\Peña.Enzo.2C.TPFinal\\LibreriaClases\\LibreriaClases.csproj"
               }
             }
           }
