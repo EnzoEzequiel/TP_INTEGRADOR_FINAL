@@ -10,6 +10,7 @@ namespace LibreriaClases.Modelos
     {
         public int IdMascota { get; set; }
         public string nombreMascota { get; set; }
+        public DateTime fechaNacimiento { get; set; }
         public bool altaMedica { get; set; }
     }
 }

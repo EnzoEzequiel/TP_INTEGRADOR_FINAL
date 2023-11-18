@@ -1,4 +1,5 @@
 ﻿using LibreriaClases.Entidades;
+using LibreriaClases.Modelos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,31 +10,17 @@ namespace LibreriaClases.Interfaces
 {
     public interface IVeterinariaRepository
     {
-        /// <summary>
-        /// Agrega un nuevo animal a la base de datos.
-        /// </summary>
-        /// <param name="animal">El animal que se va a agregar.</param>
-        void AgregarAnimal(Animal animal);
+        void AgregarMascota(Mascota mascota);
 
-        /// <summary>
-        /// Actualiza la información de un animal en la base de datos.
-        /// </summary>
-        /// <param name="animal">El animal con la información actualizada.</param>
-        void ActualizarAnimal(Animal animal);
+        void ActualizarMascota(Mascota mascota);
 
-        /// <summary>
-        /// Elimina un animal de la base de datos según su ID.
-        /// </summary>
-        /// <param name="id">El ID del animal a eliminar.</param>
-        void EliminarAnimal(int id);
+        void EliminarMascota(int id);
 
-        /// <summary>
-        /// Obtiene un animal de la base de datos según su ID.
-        /// </summary>
-        /// <param name="id">El ID del animal a obtener.</param>
-        /// <returns>El animal correspondiente al ID proporcionado.</returns>
-        Animal ObtenerAnimalPorId(int id);
+        Mascota ObtenerMascotaPorId(int id);
 
+        IEnumerable<Mascota> ObtenerTodasLasMascotas();
+
+        bool ExisteUsuarioPorCorreo(string correoElectronico);
     }
 
 }

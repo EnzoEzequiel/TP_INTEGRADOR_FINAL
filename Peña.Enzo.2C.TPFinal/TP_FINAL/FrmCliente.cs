@@ -1,4 +1,5 @@
 ﻿using LibreriaClases.Entidades;
+using LibreriaClases.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace TP_FINAL
 {
     public partial class FrmCliente : Form
     {
-        private List<Animal> mascotas = new List<Animal>();
+        private List<Mascota> mascotas = new List<Mascota>();
         private string connectionString = "";
 
         public FrmCliente()
@@ -55,7 +56,7 @@ namespace TP_FINAL
 
         private void btnGuardarDatos_Click(object sender, EventArgs e)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Animal>));
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Mascota>));
             using (TextWriter writer = new StreamWriter("Mascotas.xml"))
             {
                 serializer.Serialize(writer, mascotas);

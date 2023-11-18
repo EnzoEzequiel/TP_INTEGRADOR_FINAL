@@ -22,3 +22,5 @@ C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\LibreriaCl
 C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\LibreriaClases\obj\Debug\net6.0\refint\LibreriaClases.dll
 C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\LibreriaClases\obj\Debug\net6.0\LibreriaClases.pdb
 C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\LibreriaClases\obj\Debug\net6.0\ref\LibreriaClases.dll
+C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\LibreriaClases\bin\Debug\net6.0\LibreriaClases.runtimeconfig.json
+C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\LibreriaClases\obj\Debug\net6.0\LibreriaClases.genruntimeconfig.cache

@@ -1,6 +1,8 @@
 ﻿using LibreriaClases;
+using LibreriaClases.DataBase;
 using LibreriaClases.Entidades;
 using LibreriaClases.Interfaces;
+using LibreriaClases.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TP_FINAL
 {
@@ -22,26 +25,43 @@ namespace TP_FINAL
 
         private void btnAgregarMascota_Click(object sender, EventArgs e)
         {
-            IVeterinariaRepository repository = new VeterinariaRepository();
-
-            // Ejemplo de agregar un nuevo animal
-            Animal nuevoAnimal = new Animal { Nombre = "Firulais", Especie = "Perro", FechaNacimiento = DateTime.Now };
-            repository.AgregarAnimal(nuevoAnimal);
-
-            Animal nuevaMascota = new Animal
+            try
             {
-                //Nombre = txtNombreMascota.Text,
-                //Especie = txtEspecie.Text,
+                IVeterinariaRepository repository = new VeterinariaRepository();
+               
+                Mascota nuevaMascota = new Mascota
+                {
+                    nombreMascota = txtBoxNombreMascotaNueva.Text,
+                    altaMedica = false,  
+                    fechaNacimiento = dateTimePicker1.Value  
+                };
 
-            };
+               
+                repository.AgregarMascota(nuevaMascota);
 
-            LimpiarCampos();
+              
+                MessageBox.Show("Mascota agregada correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+           
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al agregar la mascota: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LimpiarCampos()
         {
-            //txtNombreMascota.Clear();
-            //txtEspecie.Clear();
+            txtBoxNombreMascotaNueva.Clear();
+            dateTimePicker1.Value = DateTime.Now;  
+        }
+
+        private void btnCancelarAgregarMascota_Click(object sender, EventArgs e)
+        {
+            FrmCliente frmCliente = new FrmCliente();
+            frmCliente.Show();
+            this.Hide();
         }
     }
 }

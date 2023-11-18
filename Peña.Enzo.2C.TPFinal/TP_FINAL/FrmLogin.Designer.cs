@@ -35,8 +35,8 @@
             label2=new Label();
             label3=new Label();
             label4=new Label();
-            textBox1=new TextBox();
-            textBox2=new TextBox();
+            txtBoxMail=new TextBox();
+            txtBoxContra=new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -108,19 +108,19 @@
             label4.TabIndex=7;
             label4.Text="Contraseña";
             // 
-            // textBox1
+            // txtBoxMail
             // 
-            textBox1.Location=new Point(318, 260);
-            textBox1.Name="textBox1";
-            textBox1.Size=new Size(100, 23);
-            textBox1.TabIndex=8;
+            txtBoxMail.Location=new Point(318, 260);
+            txtBoxMail.Name="txtBoxMail";
+            txtBoxMail.Size=new Size(100, 23);
+            txtBoxMail.TabIndex=8;
             // 
-            // textBox2
+            // txtBoxContra
             // 
-            textBox2.Location=new Point(318, 289);
-            textBox2.Name="textBox2";
-            textBox2.Size=new Size(100, 23);
-            textBox2.TabIndex=9;
+            txtBoxContra.Location=new Point(318, 289);
+            txtBoxContra.Name="txtBoxContra";
+            txtBoxContra.Size=new Size(100, 23);
+            txtBoxContra.TabIndex=9;
             // 
             // FrmLogin
             // 
@@ -129,8 +129,8 @@
             BackColor=SystemColors.ActiveCaption;
             BackgroundImage=Properties.Resources.Captura_de_pantalla_2023_11_05_160334;
             ClientSize=new Size(688, 399);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtBoxContra);
+            Controls.Add(txtBoxMail);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -154,7 +154,7 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtBoxMail;
+        private TextBox txtBoxContra;
     }
 }

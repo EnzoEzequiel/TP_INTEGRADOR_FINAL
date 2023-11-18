@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSignUp));
-            textBox1=new TextBox();
-            textBox2=new TextBox();
-            textBox3=new TextBox();
+            txtBoxNombreNuevo=new TextBox();
+            txtBoxMailNuevo=new TextBox();
+            txtBoxTelefonoNuevo=new TextBox();
             pictureBox1=new PictureBox();
             label1=new Label();
             label2=new Label();
             label3=new Label();
-            button1=new Button();
-            button3=new Button();
-            button4=new Button();
+            btnAgregarUsuario=new Button();
+            btnLimpiarUsuarioNuevo=new Button();
+            btnCancelarUsuarioNuevo=new Button();
             label5=new Label();
             label4=new Label();
-            textBox4=new TextBox();
+            txtBoxContraNueva=new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // txtBoxNombreNuevo
             // 
-            textBox1.Location=new Point(451, 42);
-            textBox1.Name="textBox1";
-            textBox1.Size=new Size(225, 23);
-            textBox1.TabIndex=1;
+            txtBoxNombreNuevo.Location=new Point(451, 42);
+            txtBoxNombreNuevo.Name="txtBoxNombreNuevo";
+            txtBoxNombreNuevo.Size=new Size(225, 23);
+            txtBoxNombreNuevo.TabIndex=1;
             // 
-            // textBox2
+            // txtBoxMailNuevo
             // 
-            textBox2.Location=new Point(451, 72);
-            textBox2.Name="textBox2";
-            textBox2.Size=new Size(225, 23);
-            textBox2.TabIndex=2;
+            txtBoxMailNuevo.Location=new Point(451, 72);
+            txtBoxMailNuevo.Name="txtBoxMailNuevo";
+            txtBoxMailNuevo.Size=new Size(225, 23);
+            txtBoxMailNuevo.TabIndex=2;
             // 
-            // textBox3
+            // txtBoxTelefonoNuevo
             // 
-            textBox3.Location=new Point(451, 129);
-            textBox3.Name="textBox3";
-            textBox3.Size=new Size(225, 23);
-            textBox3.TabIndex=3;
+            txtBoxTelefonoNuevo.Location=new Point(451, 129);
+            txtBoxTelefonoNuevo.Name="txtBoxTelefonoNuevo";
+            txtBoxTelefonoNuevo.Size=new Size(225, 23);
+            txtBoxTelefonoNuevo.TabIndex=3;
             // 
             // pictureBox1
             // 
@@ -106,39 +106,39 @@
             label3.TabIndex=7;
             label3.Text="Telefono";
             // 
-            // button1
+            // btnAgregarUsuario
             // 
-            button1.Image=Properties.Resources._285657_floppy_guardar_save_icon;
-            button1.Location=new Point(263, 181);
-            button1.Name="button1";
-            button1.Size=new Size(110, 60);
-            button1.TabIndex=10;
-            button1.Text="Agregar";
-            button1.TextImageRelation=TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor=true;
+            btnAgregarUsuario.Image=Properties.Resources._285657_floppy_guardar_save_icon;
+            btnAgregarUsuario.Location=new Point(263, 181);
+            btnAgregarUsuario.Name="btnAgregarUsuario";
+            btnAgregarUsuario.Size=new Size(110, 60);
+            btnAgregarUsuario.TabIndex=10;
+            btnAgregarUsuario.Text="Agregar";
+            btnAgregarUsuario.TextImageRelation=TextImageRelation.ImageBeforeText;
+            btnAgregarUsuario.UseVisualStyleBackColor=true;
             // 
-            // button3
+            // btnLimpiarUsuarioNuevo
             // 
-            button3.Image=Properties.Resources._3643729_bin_delete_garbage_rubbish_trash_icon;
-            button3.Location=new Point(407, 181);
-            button3.Name="button3";
-            button3.Size=new Size(98, 60);
-            button3.TabIndex=12;
-            button3.Text="Borrar";
-            button3.TextImageRelation=TextImageRelation.ImageBeforeText;
-            button3.UseVisualStyleBackColor=true;
+            btnLimpiarUsuarioNuevo.Image=Properties.Resources._3643729_bin_delete_garbage_rubbish_trash_icon;
+            btnLimpiarUsuarioNuevo.Location=new Point(407, 181);
+            btnLimpiarUsuarioNuevo.Name="btnLimpiarUsuarioNuevo";
+            btnLimpiarUsuarioNuevo.Size=new Size(98, 60);
+            btnLimpiarUsuarioNuevo.TabIndex=12;
+            btnLimpiarUsuarioNuevo.Text="Borrar";
+            btnLimpiarUsuarioNuevo.TextImageRelation=TextImageRelation.ImageBeforeText;
+            btnLimpiarUsuarioNuevo.UseVisualStyleBackColor=true;
             // 
-            // button4
+            // btnCancelarUsuarioNuevo
             // 
-            button4.Image=Properties.Resources._9004828_cross_delete_remove_cancel_icon;
-            button4.Location=new Point(525, 181);
-            button4.Name="button4";
-            button4.Size=new Size(110, 60);
-            button4.TabIndex=13;
-            button4.Text="Cancelar";
-            button4.TextImageRelation=TextImageRelation.ImageBeforeText;
-            button4.UseVisualStyleBackColor=true;
-            button4.Click+=button4_Click;
+            btnCancelarUsuarioNuevo.Image=Properties.Resources._9004828_cross_delete_remove_cancel_icon;
+            btnCancelarUsuarioNuevo.Location=new Point(525, 181);
+            btnCancelarUsuarioNuevo.Name="btnCancelarUsuarioNuevo";
+            btnCancelarUsuarioNuevo.Size=new Size(110, 60);
+            btnCancelarUsuarioNuevo.TabIndex=13;
+            btnCancelarUsuarioNuevo.Text="Cancelar";
+            btnCancelarUsuarioNuevo.TextImageRelation=TextImageRelation.ImageBeforeText;
+            btnCancelarUsuarioNuevo.UseVisualStyleBackColor=true;
+            btnCancelarUsuarioNuevo.Click+=button4_Click;
             // 
             // label5
             // 
@@ -160,12 +160,12 @@
             label4.TabIndex=17;
             label4.Text="Contraseña";
             // 
-            // textBox4
+            // txtBoxContraNueva
             // 
-            textBox4.Location=new Point(451, 100);
-            textBox4.Name="textBox4";
-            textBox4.Size=new Size(225, 23);
-            textBox4.TabIndex=18;
+            txtBoxContraNueva.Location=new Point(451, 100);
+            txtBoxContraNueva.Name="txtBoxContraNueva";
+            txtBoxContraNueva.Size=new Size(225, 23);
+            txtBoxContraNueva.TabIndex=18;
             // 
             // FrmSignUp
             // 
@@ -173,19 +173,19 @@
             AutoScaleMode=AutoScaleMode.Font;
             BackColor=SystemColors.ActiveCaption;
             ClientSize=new Size(684, 254);
-            Controls.Add(textBox4);
+            Controls.Add(txtBoxContraNueva);
             Controls.Add(label4);
             Controls.Add(label5);
-            Controls.Add(button4);
-            Controls.Add(button3);
-            Controls.Add(button1);
+            Controls.Add(btnCancelarUsuarioNuevo);
+            Controls.Add(btnLimpiarUsuarioNuevo);
+            Controls.Add(btnAgregarUsuario);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtBoxTelefonoNuevo);
+            Controls.Add(txtBoxMailNuevo);
+            Controls.Add(txtBoxNombreNuevo);
             Name="FrmSignUp";
             Text="Frm Cliente Nuevo";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -194,18 +194,18 @@
         }
 
         #endregion
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtBoxNombreNuevo;
+        private TextBox txtBoxMailNuevo;
+        private TextBox txtBoxTelefonoNuevo;
         private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
         private Label label3;
-        private Button button1;
-        private Button button3;
-        private Button button4;
+        private Button btnAgregarUsuario;
+        private Button btnLimpiarUsuarioNuevo;
+        private Button btnCancelarUsuarioNuevo;
         private Label label5;
         private Label label4;
-        private TextBox textBox4;
+        private TextBox txtBoxContraNueva;
     }
 }
