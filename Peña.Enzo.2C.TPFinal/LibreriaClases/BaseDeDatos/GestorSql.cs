@@ -51,7 +51,9 @@ namespace LibreriaClases.DataBase
 
                                 return default; // Devuelve el objeto mapeado
                             }
+                            reader.Close();
                         }
+
                     }
                 }
                 catch (Exception ex)
@@ -77,8 +79,11 @@ namespace LibreriaClases.DataBase
                         {
                             while (reader.Read())
                             {
+                                reader.Close();
                                 object result = command.ExecuteScalar();
                                 //connection.Close();
+
+                                
                                 return result != null ? Convert.ToInt32(result) : 0;
 
                                 //object result = command.ExecuteReader();
@@ -126,6 +131,8 @@ namespace LibreriaClases.DataBase
 
                                 listaMascotas.Add(mascota);
                             }
+
+                            reader.Close();
                         }
                     }
                 }
