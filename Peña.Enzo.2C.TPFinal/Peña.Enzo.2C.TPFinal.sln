@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TP_FINAL", "TP_FINAL\TP_FINAL.csproj", "{A78231BF-348B-4001-9AD2-D0701799EA8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TP_FINAL", "TP_FINAL\TP_FINAL.csproj", "{A78231BF-348B-4001-9AD2-D0701799EA8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibreriaClases", "LibreriaClases\LibreriaClases.csproj", "{464D58D9-418D-4541-BCB1-72BC245A4539}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibreriaClases", "LibreriaClases\LibreriaClases.csproj", "{464D58D9-418D-4541-BCB1-72BC245A4539}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

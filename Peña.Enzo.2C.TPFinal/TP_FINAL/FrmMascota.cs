@@ -1,6 +1,5 @@
 ﻿using LibreriaClases;
 using LibreriaClases.DataBase;
-using LibreriaClases.Entidades;
 using LibreriaClases.Interfaces;
 using LibreriaClases.Modelos;
 using System;
@@ -27,7 +26,8 @@ namespace TP_FINAL
         {
             try
             {
-                IVeterinariaRepository repository = new VeterinariaRepository();
+                GestorSQL gestorSQL = new GestorSQL();
+                IVeterinariaRepository repository = new VeterinariaRepository(gestorSQL);
                
                 Mascota nuevaMascota = new Mascota
                 {
@@ -59,7 +59,7 @@ namespace TP_FINAL
 
         private void btnCancelarAgregarMascota_Click(object sender, EventArgs e)
         {
-            FrmCliente frmCliente = new FrmCliente();
+            FrmCliente frmCliente = new FrmCliente(0);
             frmCliente.Show();
             this.Hide();
         }

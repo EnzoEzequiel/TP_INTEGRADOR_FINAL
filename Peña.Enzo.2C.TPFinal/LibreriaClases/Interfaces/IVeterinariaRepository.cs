@@ -1,4 +1,4 @@
-﻿using LibreriaClases.Entidades;
+﻿
 using LibreriaClases.Modelos;
 using System;
 using System.Collections.Generic;
@@ -16,11 +16,11 @@ namespace LibreriaClases.Interfaces
 
         void EliminarMascota(int id);
 
-        Mascota ObtenerMascotaPorId(int id);
+        //ObtenerPorId(string nombre,int id);
 
         IEnumerable<Mascota> ObtenerTodasLasMascotas();
 
-        bool ExisteUsuarioPorCorreo(string correoElectronico);
+        int ExisteUsuarioPorCorreo(string correoElectronico, string contra);
     }
 
 }

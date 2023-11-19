@@ -29,17 +29,16 @@ namespace TP_FINAL
         {
             try
             {
-                // Obtener el correo electrónico del formulario o de donde sea que esté almacenado
-                string correoElectronico = ObtenerCorreoElectronicoDesdeFormulario(); // Ajusta según tu implementación
+                string correoElectronico = txtBoxMail.Text;
+                string contra = txtBoxContra.Text;
+                GestorSQL gestorSQL = new GestorSQL();
+                IVeterinariaRepository repository = new VeterinariaRepository(gestorSQL);
 
-                IVeterinariaRepository repository = new VeterinariaRepository();
+                int idUsuario = repository.ExisteUsuarioPorCorreo(correoElectronico, contra);
 
-                // Realizar la consulta para verificar si el correo existe en la base de datos
-                bool existeUsuario = repository.ExisteUsuarioPorCorreo(correoElectronico);
-
-                if (existeUsuario)
+                if (idUsuario != 0)
                 {
-                    FrmCliente frmCliente = new FrmCliente();
+                    FrmCliente frmCliente = new FrmCliente(idUsuario);
                     frmCliente.Show();
                     this.Hide();
                 }
@@ -53,13 +52,5 @@ namespace TP_FINAL
                 MessageBox.Show($"Error al verificar el usuario: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        // Método ficticio para obtener el correo electrónico del formulario
-        private string ObtenerCorreoElectronicoDesdeFormulario()
-        {
-            // Implementa según tu estructura de formulario
-            return "correo@ejemplo.com";
-        }
-
     }
 }

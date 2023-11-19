@@ -1,0 +1,11 @@
+C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\Libreria\bin\Debug\net6.0\Libreria.deps.json
+C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\Libreria\bin\Debug\net6.0\Libreria.dll
+C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\Libreria\bin\Debug\net6.0\Libreria.pdb
+C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\Libreria\obj\Debug\net6.0\Libreria.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\Libreria\obj\Debug\net6.0\Libreria.AssemblyInfoInputs.cache
+C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\Libreria\obj\Debug\net6.0\Libreria.AssemblyInfo.cs
+C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\Libreria\obj\Debug\net6.0\Libreria.csproj.CoreCompileInputs.cache
+C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\Libreria\obj\Debug\net6.0\Libreria.dll
+C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\Libreria\obj\Debug\net6.0\refint\Libreria.dll
+C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\Libreria\obj\Debug\net6.0\Libreria.pdb
+C:\Users\enzoe\Desktop\Docs\TP_INTEGRADOR_FINAL\Peña.Enzo.2C.TPFinal\Libreria\obj\Debug\net6.0\ref\Libreria.dll

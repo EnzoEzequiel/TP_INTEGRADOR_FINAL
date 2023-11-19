@@ -1,4 +1,7 @@
-﻿using LibreriaClases.Entidades;
+﻿
+using LibreriaClases.DataBase;
+using LibreriaClases.Excepciones;
+using LibreriaClases.Interfaces;
 using LibreriaClases.Modelos;
 using System;
 using System.Collections.Generic;
@@ -17,36 +20,49 @@ namespace TP_FINAL
     public partial class FrmCliente : Form
     {
         private List<Mascota> mascotas = new List<Mascota>();
-        private string connectionString = "";
+        private int idUsuario;
 
-        public FrmCliente()
+        public FrmCliente(int idUsuario)
         {
             InitializeComponent();
+            this.Load += FrmCliente_Load;
+            this.idUsuario = idUsuario;
         }
 
         private void FrmCliente_Load(object sender, EventArgs e)
         {
+            GestorSQL gestorSQL = new GestorSQL();
+            lblNombreCliente.Text = gestorSQL.ObtenerNombrePorId(idUsuario);
+
             CargarMascotasDesdeBaseDeDatos();
 
             RellenarComboBoxMascotas();
 
-            //lblEstadoEnfermedad.Text = GenerarDatoAleatorio().ToString();
-            //lblEstadoDeAlta.Text = GenerarDatoAleatorio().ToString();
         }
 
         private void CargarMascotasDesdeBaseDeDatos()
         {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
+                GestorSQL gestorSQL = new GestorSQL();
+                int idDueño = gestorSQL.ObtenerDueñoByIdPersona(idUsuario);
+                mascotas = gestorSQL.ObtenerMascotasByIdPersona(idDueño).ToList();
+            }
+            catch (BaseDeDatosException ex)
+            {
+                MessageBox.Show($"Error al cargar mascotas desde la base de datos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void RellenarComboBoxMascotas()
         {
-            //comboBoxMascotas.DataSource = mascotas;
-            //comboBoxMascotas.DisplayMember = "Nombre"; 
+            if (mascotas.Any())
+            {
+                comboBox1.DataSource = mascotas;
+                comboBox1.DisplayMember = "nombreMascota";
+            }
         }
+
 
         private bool GenerarDatoAleatorio()
         {
