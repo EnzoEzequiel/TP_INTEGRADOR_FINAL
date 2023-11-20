@@ -10,8 +10,6 @@ namespace LibreriaClases.Interfaces
 {
     public interface IVeterinariaRepository
     {
-        void AgregarMascota(Mascota mascota);
-
         void ActualizarMascota(Mascota mascota);
 
         void EliminarMascota(int id);

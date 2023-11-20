@@ -2,6 +2,7 @@
 using LibreriaClases.Modelos;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics.Contracts;
 using System.Linq;
 
 namespace LibreriaClases.DataBase
@@ -13,12 +14,6 @@ namespace LibreriaClases.DataBase
         public VeterinariaRepository(GestorSQL gestorSQL)
         {
             _gestorSQL = gestorSQL;
-        }
-
-
-        public void AgregarMascota(Mascota mascota)
-        {
-            _gestorSQL.EjecutarQuery("INSERT INTO Mascotas (nombreMascota, fechaNacimiento, altaMedica) VALUES (...)");
         }
 
         public void ActualizarMascota(Mascota mascota)
@@ -46,6 +41,11 @@ namespace LibreriaClases.DataBase
         public int ExisteUsuarioPorCorreo(string correoElectronico, string contra)
         {
             return _gestorSQL.ExisteUsuarioPorCorreo(correoElectronico, contra);
+        }
+
+        public bool ExisteMascotaPorNombreYNacimiento(string nombre, string fNacimiento)
+        {
+            return _gestorSQL.ExisteMascotaPorNombreYNacimiento(nombre, fNacimiento);
         }
     }
 }

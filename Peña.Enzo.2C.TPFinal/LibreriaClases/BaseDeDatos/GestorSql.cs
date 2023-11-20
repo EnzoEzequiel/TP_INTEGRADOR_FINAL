@@ -81,13 +81,9 @@ namespace LibreriaClases.DataBase
                             {
                                 reader.Close();
                                 object result = command.ExecuteScalar();
-                                //connection.Close();
-
                                 
                                 return result != null ? Convert.ToInt32(result) : 0;
 
-                                //object result = command.ExecuteReader();
-                                //return result != null ? Convert.ToInt32(result) : 0;
                             }
                         }
                     }
@@ -183,6 +179,30 @@ namespace LibreriaClases.DataBase
                 }
 
                 return listaElementos;
+            }
+        }
+
+        public bool ExisteMascotaPorNombreYNacimiento(string nombre, string fNacimiento)
+        {
+
+            using (SqlConnection connection = new SqlConnection(stringConnection))
+            {
+                string query = $"SELECT IdPersona FROM Personas WHERE Nombre = '{nombre}' AND FechaNacimiento = '{fNacimiento}'";
+
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        object result = command.ExecuteScalar();
+                        return false;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new BaseDeDatosException("Error al verificar usuario por correo", ex);
+                }
+                finally { connection.Close(); }
             }
         }
 

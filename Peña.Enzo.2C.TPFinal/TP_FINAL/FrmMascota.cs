@@ -2,10 +2,12 @@
 using LibreriaClases.DataBase;
 using LibreriaClases.Interfaces;
 using LibreriaClases.Modelos;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -38,22 +40,27 @@ namespace TP_FINAL
         {
             try
             {
-                GestorSQL gestorSQL = new GestorSQL();
-                IVeterinariaRepository repository = new VeterinariaRepository(gestorSQL);
+                string nombre = txtBoxNombreMascotaNueva.Text;
+                string especie = txtBoxEspecieMascotaNueva.Text;
+                DateTime fNacimiento = dateTimePicker1.Value;
+                bool altaMedica = false;
 
-                Mascota nuevaMascota = new Mascota
+                if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(especie) || fNacimiento==null)
                 {
-                    nombreMascota = txtBoxNombreMascotaNueva.Text,
-                    altaMedica = false,
-                    fechaNacimiento = dateTimePicker1.Value
-                };
+                    MessageBox.Show("Por favor, complete todos los campos.", "Campos Incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                GestorSQL gestorSQL = new GestorSQL();
 
-                repository.AgregarMascota(nuevaMascota);
+                string queryInsertUsuario = $"INSERT INTO Mascotas (Nombre, Especie, FechaNacimiento, AltaMedica) VALUES ('{nombre}', '{especie}', '{fNacimiento}', '{altaMedica}')";
 
+                gestorSQL.EjecutarQuery(queryInsertUsuario);
 
                 MessageBox.Show("Mascota agregada correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                this.Close();
+                
 
                 LimpiarCampos();
             }
