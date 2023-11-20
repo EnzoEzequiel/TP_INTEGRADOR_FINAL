@@ -41,7 +41,6 @@
             button2=new Button();
             pictureBox1=new PictureBox();
             btnVolverMenu=new Button();
-            label6=new Label();
             label7=new Label();
             lblCalendario=new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -170,16 +169,6 @@
             btnVolverMenu.UseVisualStyleBackColor=true;
             btnVolverMenu.Click+=btnVolverMenu_Click;
             // 
-            // label6
-            // 
-            label6.AutoSize=true;
-            label6.Font=new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location=new Point(409, 26);
-            label6.Name="label6";
-            label6.Size=new Size(38, 32);
-            label6.TabIndex=13;
-            label6.Text="!!!";
-            // 
             // label7
             // 
             label7.AutoSize=true;
@@ -206,7 +195,6 @@
             ClientSize=new Size(504, 241);
             Controls.Add(lblCalendario);
             Controls.Add(label7);
-            Controls.Add(label6);
             Controls.Add(btnVolverMenu);
             Controls.Add(pictureBox1);
             Controls.Add(button2);
@@ -242,7 +230,6 @@
         private Button button2;
         private PictureBox pictureBox1;
         private Button btnVolverMenu;
-        private Label label6;
         private Label label7;
         private Label lblCalendario;
     }

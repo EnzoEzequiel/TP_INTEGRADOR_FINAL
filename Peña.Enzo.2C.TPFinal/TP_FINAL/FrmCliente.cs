@@ -32,7 +32,7 @@ namespace TP_FINAL
         private void FrmCliente_Load(object sender, EventArgs e)
         {
             GestorSQL gestorSQL = new GestorSQL();
-            lblNombreCliente.Text = gestorSQL.ObtenerNombrePorId(idUsuario).ToUpper();
+            lblNombreCliente.Text = gestorSQL.ObtenerNombrePorId(idUsuario).ToUpper()+"!!!";
 
             CargarMascotasDesdeBaseDeDatos();
 
