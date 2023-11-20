@@ -42,6 +42,8 @@
             label5=new Label();
             label4=new Label();
             txtBoxContraNueva=new TextBox();
+            label6=new Label();
+            txtBoxDireccion=new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -109,29 +111,31 @@
             // btnAgregarUsuario
             // 
             btnAgregarUsuario.Image=Properties.Resources._285657_floppy_guardar_save_icon;
-            btnAgregarUsuario.Location=new Point(263, 181);
+            btnAgregarUsuario.Location=new Point(266, 187);
             btnAgregarUsuario.Name="btnAgregarUsuario";
             btnAgregarUsuario.Size=new Size(110, 60);
             btnAgregarUsuario.TabIndex=10;
             btnAgregarUsuario.Text="Agregar";
             btnAgregarUsuario.TextImageRelation=TextImageRelation.ImageBeforeText;
             btnAgregarUsuario.UseVisualStyleBackColor=true;
+            btnAgregarUsuario.Click+=btnAgregarUsuario_Click;
             // 
             // btnLimpiarUsuarioNuevo
             // 
             btnLimpiarUsuarioNuevo.Image=Properties.Resources._3643729_bin_delete_garbage_rubbish_trash_icon;
-            btnLimpiarUsuarioNuevo.Location=new Point(407, 181);
+            btnLimpiarUsuarioNuevo.Location=new Point(410, 187);
             btnLimpiarUsuarioNuevo.Name="btnLimpiarUsuarioNuevo";
             btnLimpiarUsuarioNuevo.Size=new Size(98, 60);
             btnLimpiarUsuarioNuevo.TabIndex=12;
             btnLimpiarUsuarioNuevo.Text="Borrar";
             btnLimpiarUsuarioNuevo.TextImageRelation=TextImageRelation.ImageBeforeText;
             btnLimpiarUsuarioNuevo.UseVisualStyleBackColor=true;
+            btnLimpiarUsuarioNuevo.Click+=btnLimpiarUsuarioNuevo_Click;
             // 
             // btnCancelarUsuarioNuevo
             // 
             btnCancelarUsuarioNuevo.Image=Properties.Resources._9004828_cross_delete_remove_cancel_icon;
-            btnCancelarUsuarioNuevo.Location=new Point(525, 181);
+            btnCancelarUsuarioNuevo.Location=new Point(535, 187);
             btnCancelarUsuarioNuevo.Name="btnCancelarUsuarioNuevo";
             btnCancelarUsuarioNuevo.Size=new Size(110, 60);
             btnCancelarUsuarioNuevo.TabIndex=13;
@@ -167,12 +171,31 @@
             txtBoxContraNueva.Size=new Size(225, 23);
             txtBoxContraNueva.TabIndex=18;
             // 
+            // label6
+            // 
+            label6.AutoSize=true;
+            label6.Font=new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location=new Point(266, 158);
+            label6.Name="label6";
+            label6.Size=new Size(96, 25);
+            label6.TabIndex=19;
+            label6.Text="Direccion";
+            // 
+            // txtBoxDireccion
+            // 
+            txtBoxDireccion.Location=new Point(451, 158);
+            txtBoxDireccion.Name="txtBoxDireccion";
+            txtBoxDireccion.Size=new Size(225, 23);
+            txtBoxDireccion.TabIndex=20;
+            // 
             // FrmSignUp
             // 
             AutoScaleDimensions=new SizeF(7F, 15F);
             AutoScaleMode=AutoScaleMode.Font;
             BackColor=SystemColors.ActiveCaption;
             ClientSize=new Size(684, 254);
+            Controls.Add(txtBoxDireccion);
+            Controls.Add(label6);
             Controls.Add(txtBoxContraNueva);
             Controls.Add(label4);
             Controls.Add(label5);
@@ -207,5 +230,7 @@
         private Label label5;
         private Label label4;
         private TextBox txtBoxContraNueva;
+        private Label label6;
+        private TextBox txtBoxDireccion;
     }
 }
