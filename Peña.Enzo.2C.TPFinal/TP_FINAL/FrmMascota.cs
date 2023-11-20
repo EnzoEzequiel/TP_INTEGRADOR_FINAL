@@ -22,27 +22,39 @@ namespace TP_FINAL
             InitializeComponent();
         }
 
-        private void btnAgregarMascota_Click(object sender, EventArgs e)
+        private void LimpiarCampos()
+        {
+            txtBoxNombreMascotaNueva.Clear();
+            dateTimePicker1.Value = DateTime.Now;
+            txtBoxEspecieMascotaNueva.Clear();
+        }
+
+        private void btnCancelarAgregarMascota_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAgregarMascotaNueva_Click(object sender, EventArgs e)
         {
             try
             {
                 GestorSQL gestorSQL = new GestorSQL();
                 IVeterinariaRepository repository = new VeterinariaRepository(gestorSQL);
-               
+
                 Mascota nuevaMascota = new Mascota
                 {
                     nombreMascota = txtBoxNombreMascotaNueva.Text,
-                    altaMedica = false,  
-                    fechaNacimiento = dateTimePicker1.Value  
+                    altaMedica = false,
+                    fechaNacimiento = dateTimePicker1.Value
                 };
 
-               
+
                 repository.AgregarMascota(nuevaMascota);
 
-              
+
                 MessageBox.Show("Mascota agregada correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-           
+
                 LimpiarCampos();
             }
             catch (Exception ex)
@@ -51,17 +63,9 @@ namespace TP_FINAL
             }
         }
 
-        private void LimpiarCampos()
+        private void btnLimpiarCamposMascota_Click(object sender, EventArgs e)
         {
-            txtBoxNombreMascotaNueva.Clear();
-            dateTimePicker1.Value = DateTime.Now;  
-        }
-
-        private void btnCancelarAgregarMascota_Click(object sender, EventArgs e)
-        {
-            FrmCliente frmCliente = new FrmCliente(0);
-            frmCliente.Show();
-            this.Hide();
+            LimpiarCampos();
         }
     }
 }

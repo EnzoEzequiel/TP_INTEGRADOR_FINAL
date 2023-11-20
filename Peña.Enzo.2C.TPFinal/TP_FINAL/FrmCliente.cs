@@ -32,7 +32,7 @@ namespace TP_FINAL
         private void FrmCliente_Load(object sender, EventArgs e)
         {
             GestorSQL gestorSQL = new GestorSQL();
-            lblNombreCliente.Text = gestorSQL.ObtenerNombrePorId(idUsuario);
+            lblNombreCliente.Text = gestorSQL.ObtenerNombrePorId(idUsuario).ToUpper();
 
             CargarMascotasDesdeBaseDeDatos();
 
@@ -83,7 +83,6 @@ namespace TP_FINAL
         {
             FrmMascota frmMascota = new FrmMascota();
             frmMascota.Show();
-            this.Close();
         }
 
         private void btnVolverMenu_Click(object sender, EventArgs e)

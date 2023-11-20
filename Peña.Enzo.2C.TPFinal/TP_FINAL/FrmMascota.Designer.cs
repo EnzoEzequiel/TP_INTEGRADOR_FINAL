@@ -32,10 +32,12 @@
             label1=new Label();
             label2=new Label();
             txtBoxNombreMascotaNueva=new TextBox();
-            btnAgregarMacotaNueva=new Button();
+            btnAgregarMascotaNueva=new Button();
             btnLimpiarCamposMascota=new Button();
             btnCancelarAgregarMascota=new Button();
             dateTimePicker1=new DateTimePicker();
+            label3=new Label();
+            txtBoxEspecieMascotaNueva=new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -73,19 +75,20 @@
             // 
             txtBoxNombreMascotaNueva.Location=new Point(349, 17);
             txtBoxNombreMascotaNueva.Name="txtBoxNombreMascotaNueva";
-            txtBoxNombreMascotaNueva.Size=new Size(100, 23);
+            txtBoxNombreMascotaNueva.Size=new Size(263, 23);
             txtBoxNombreMascotaNueva.TabIndex=5;
             // 
-            // btnAgregarMacotaNueva
+            // btnAgregarMascotaNueva
             // 
-            btnAgregarMacotaNueva.Image=Properties.Resources._285657_floppy_guardar_save_icon;
-            btnAgregarMacotaNueva.Location=new Point(246, 132);
-            btnAgregarMacotaNueva.Name="btnAgregarMacotaNueva";
-            btnAgregarMacotaNueva.Size=new Size(107, 64);
-            btnAgregarMacotaNueva.TabIndex=9;
-            btnAgregarMacotaNueva.Text="Agregar";
-            btnAgregarMacotaNueva.TextImageRelation=TextImageRelation.ImageBeforeText;
-            btnAgregarMacotaNueva.UseVisualStyleBackColor=true;
+            btnAgregarMascotaNueva.Image=Properties.Resources._285657_floppy_guardar_save_icon;
+            btnAgregarMascotaNueva.Location=new Point(246, 132);
+            btnAgregarMascotaNueva.Name="btnAgregarMascotaNueva";
+            btnAgregarMascotaNueva.Size=new Size(107, 64);
+            btnAgregarMascotaNueva.TabIndex=9;
+            btnAgregarMascotaNueva.Text="Agregar";
+            btnAgregarMascotaNueva.TextImageRelation=TextImageRelation.ImageBeforeText;
+            btnAgregarMascotaNueva.UseVisualStyleBackColor=true;
+            btnAgregarMascotaNueva.Click+=btnAgregarMascotaNueva_Click;
             // 
             // btnLimpiarCamposMascota
             // 
@@ -97,6 +100,7 @@
             btnLimpiarCamposMascota.Text="Limpiar";
             btnLimpiarCamposMascota.TextImageRelation=TextImageRelation.ImageBeforeText;
             btnLimpiarCamposMascota.UseVisualStyleBackColor=true;
+            btnLimpiarCamposMascota.Click+=btnLimpiarCamposMascota_Click;
             // 
             // btnCancelarAgregarMascota
             // 
@@ -108,23 +112,43 @@
             btnCancelarAgregarMascota.Text="Cancelar";
             btnCancelarAgregarMascota.TextImageRelation=TextImageRelation.ImageBeforeText;
             btnCancelarAgregarMascota.UseVisualStyleBackColor=true;
+            btnCancelarAgregarMascota.Click+=btnCancelarAgregarMascota_Click_1;
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Location=new Point(445, 57);
             dateTimePicker1.Name="dateTimePicker1";
-            dateTimePicker1.Size=new Size(200, 23);
+            dateTimePicker1.Size=new Size(167, 23);
             dateTimePicker1.TabIndex=14;
+            // 
+            // label3
+            // 
+            label3.AutoSize=true;
+            label3.Font=new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location=new Point(246, 94);
+            label3.Name="label3";
+            label3.Size=new Size(76, 25);
+            label3.TabIndex=15;
+            label3.Text="Especie";
+            // 
+            // txtBoxEspecieMascotaNueva
+            // 
+            txtBoxEspecieMascotaNueva.Location=new Point(349, 96);
+            txtBoxEspecieMascotaNueva.Name="txtBoxEspecieMascotaNueva";
+            txtBoxEspecieMascotaNueva.Size=new Size(263, 23);
+            txtBoxEspecieMascotaNueva.TabIndex=16;
             // 
             // FrmMascota
             // 
             AutoScaleDimensions=new SizeF(7F, 15F);
             AutoScaleMode=AutoScaleMode.Font;
             ClientSize=new Size(653, 203);
+            Controls.Add(txtBoxEspecieMascotaNueva);
+            Controls.Add(label3);
             Controls.Add(dateTimePicker1);
             Controls.Add(btnCancelarAgregarMascota);
             Controls.Add(btnLimpiarCamposMascota);
-            Controls.Add(btnAgregarMacotaNueva);
+            Controls.Add(btnAgregarMascotaNueva);
             Controls.Add(txtBoxNombreMascotaNueva);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -142,9 +166,11 @@
         private Label label1;
         private Label label2;
         private TextBox txtBoxNombreMascotaNueva;
-        private Button btnAgregarMacotaNueva;
+        private Button btnAgregarMascotaNueva;
         private Button btnLimpiarCamposMascota;
         private Button btnCancelarAgregarMascota;
         private DateTimePicker dateTimePicker1;
+        private Label label3;
+        private TextBox txtBoxEspecieMascotaNueva;
     }
 }
