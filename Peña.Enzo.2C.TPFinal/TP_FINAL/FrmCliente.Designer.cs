@@ -33,15 +33,12 @@
             label3=new Label();
             comboBox1=new ComboBox();
             lblNombreCliente=new Label();
-            label4=new Label();
-            label5=new Label();
             lblEnfermo=new Label();
             lblAlta=new Label();
             button1=new Button();
             button2=new Button();
             pictureBox1=new PictureBox();
             btnVolverMenu=new Button();
-            label7=new Label();
             lblCalendario=new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -94,28 +91,10 @@
             lblNombreCliente.TabIndex=4;
             lblNombreCliente.Text="nombreUsuario";
             // 
-            // label4
-            // 
-            label4.AutoSize=true;
-            label4.Location=new Point(17, 139);
-            label4.Name="label4";
-            label4.Size=new Size(58, 15);
-            label4.TabIndex=5;
-            label4.Text="Enfermo: ";
-            // 
-            // label5
-            // 
-            label5.AutoSize=true;
-            label5.Location=new Point(17, 163);
-            label5.Name="label5";
-            label5.Size=new Size(76, 15);
-            label5.TabIndex=6;
-            label5.Text="Dado de alta:";
-            // 
             // lblEnfermo
             // 
             lblEnfermo.AutoSize=true;
-            lblEnfermo.Location=new Point(106, 139);
+            lblEnfermo.Location=new Point(17, 137);
             lblEnfermo.Name="lblEnfermo";
             lblEnfermo.Size=new Size(87, 15);
             lblEnfermo.TabIndex=7;
@@ -124,7 +103,7 @@
             // lblAlta
             // 
             lblAlta.AutoSize=true;
-            lblAlta.Location=new Point(106, 163);
+            lblAlta.Location=new Point(17, 163);
             lblAlta.Name="lblAlta";
             lblAlta.Size=new Size(63, 15);
             lblAlta.TabIndex=8;
@@ -170,19 +149,10 @@
             btnVolverMenu.UseVisualStyleBackColor=true;
             btnVolverMenu.Click+=btnVolverMenu_Click;
             // 
-            // label7
-            // 
-            label7.AutoSize=true;
-            label7.Location=new Point(17, 111);
-            label7.Name="label7";
-            label7.Size=new Size(132, 15);
-            label7.TabIndex=14;
-            label7.Text="Calendario  de vacunas:";
-            // 
             // lblCalendario
             // 
             lblCalendario.AutoSize=true;
-            lblCalendario.Location=new Point(155, 111);
+            lblCalendario.Location=new Point(17, 111);
             lblCalendario.Name="lblCalendario";
             lblCalendario.Size=new Size(85, 15);
             lblCalendario.TabIndex=15;
@@ -195,15 +165,12 @@
             BackColor=SystemColors.ActiveCaption;
             ClientSize=new Size(504, 241);
             Controls.Add(lblCalendario);
-            Controls.Add(label7);
             Controls.Add(btnVolverMenu);
             Controls.Add(pictureBox1);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(lblAlta);
             Controls.Add(lblEnfermo);
-            Controls.Add(label5);
-            Controls.Add(label4);
             Controls.Add(lblNombreCliente);
             Controls.Add(comboBox1);
             Controls.Add(label3);
@@ -223,15 +190,12 @@
         private Label label3;
         private ComboBox comboBox1;
         private Label lblNombreCliente;
-        private Label label4;
-        private Label label5;
         private Label lblEnfermo;
         private Label lblAlta;
         private Button button1;
         private Button button2;
         private PictureBox pictureBox1;
         private Button btnVolverMenu;
-        private Label label7;
         private Label lblCalendario;
     }
 }

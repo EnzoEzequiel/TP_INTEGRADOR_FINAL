@@ -35,6 +35,7 @@ namespace TP_FINAL
             lblNombreCliente.Text = gestorSQL.ObtenerNombrePorId(idUsuario).ToUpper()+"!!!";
             //Para aplicar el uso de hilos y evitar bloquear la interfaz de usuario
             //mientras se cargan las mascotas desde la base de datos
+
             actualizarListaMascotas();
         }
 
@@ -54,13 +55,26 @@ namespace TP_FINAL
                 MessageBox.Show($"Error al cargar mascotas desde la base de datos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem is Mascota mascotaSeleccionada)
+            {
+                bool calendarioVacunas = mascotaSeleccionada.estadoCalendario;
+                bool enfermo = mascotaSeleccionada.estadoEnfermo;
+                bool altaMedica = mascotaSeleccionada.altaMedica;
 
+                lblCalendario.Text = $"Calendario de vacunas: {(calendarioVacunas ? "Completo" : "Incompleto")}";
+                lblEnfermo.Text = $"Estado de salud: {(enfermo ? "Enfermo" : "Sano")}";
+                lblAlta.Text = $"Estado de alta médica: {(altaMedica ? "Dado de alta" : "No dado de alta")}";
+            }
+        }
         private void RellenarComboBoxMascotas()
         {
             if (mascotas.Any())
             {
                 comboBox1.DataSource = mascotas;
                 comboBox1.DisplayMember = "nombreMascota";
+                comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             }
         }
 
