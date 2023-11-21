@@ -138,6 +138,7 @@
             button1.TabIndex=9;
             button1.Text="Guardar estado";
             button1.UseVisualStyleBackColor=true;
+            button1.Click+=button1_Click;
             // 
             // button2
             // 

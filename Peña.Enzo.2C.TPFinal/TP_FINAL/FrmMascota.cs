@@ -19,9 +19,14 @@ namespace TP_FINAL
 {
     public partial class FrmMascota : Form
     {
-        public FrmMascota()
+        private int idUsuario;
+        public event EventHandler MascotaAgregada;
+        private FrmCliente frmCliente;
+        public FrmMascota(int idUsuario, FrmCliente frmCliente)
         {
             InitializeComponent();
+            this.idUsuario = idUsuario;
+            this.frmCliente=frmCliente;
         }
 
         private void LimpiarCampos()
@@ -44,6 +49,7 @@ namespace TP_FINAL
                 string especie = txtBoxEspecieMascotaNueva.Text;
                 DateTime fNacimiento = dateTimePicker1.Value;
                 bool altaMedica = false;
+                bool vacunasAplicadas = false;
 
                 if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(especie) || fNacimiento==null)
                 {
@@ -52,24 +58,26 @@ namespace TP_FINAL
                 }
 
                 GestorSQL gestorSQL = new GestorSQL();
+                int idDueño = gestorSQL.ObtenerDueñoByIdPersona(idUsuario);
 
-                string queryInsertUsuario = $"INSERT INTO Mascotas (Nombre, Especie, FechaNacimiento, AltaMedica) VALUES ('{nombre}', '{especie}', '{fNacimiento}', '{altaMedica}')";
+                string queryInsertUsuario = $"INSERT INTO Mascotas (Nombre, Especie, FechaNacimiento, IdDueño, AltaMedica, VacunasAplicadas) " +
+                            $"VALUES ('{nombre}', '{especie}', '{fNacimiento.ToString("yyyy-MM-dd")}', '{idDueño}', '{altaMedica}', '{vacunasAplicadas}')";
 
                 gestorSQL.EjecutarQuery(queryInsertUsuario);
 
                 MessageBox.Show("Mascota agregada correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                frmCliente.actualizarListaMascotas();
+
                 this.Close();
                 
-
-                LimpiarCampos();
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al agregar la mascota: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+      
         private void btnLimpiarCamposMascota_Click(object sender, EventArgs e)
         {
             LimpiarCampos();

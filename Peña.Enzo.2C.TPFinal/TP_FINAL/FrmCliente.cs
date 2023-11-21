@@ -21,6 +21,7 @@ namespace TP_FINAL
     {
         private List<Mascota> mascotas = new List<Mascota>();
         private int idUsuario;
+        public GestorSQL gestorSQL = new GestorSQL();
 
         public FrmCliente(int idUsuario)
         {
@@ -31,22 +32,22 @@ namespace TP_FINAL
 
         private void FrmCliente_Load(object sender, EventArgs e)
         {
-            GestorSQL gestorSQL = new GestorSQL();
             lblNombreCliente.Text = gestorSQL.ObtenerNombrePorId(idUsuario).ToUpper()+"!!!";
-
-            CargarMascotasDesdeBaseDeDatos();
-
-            RellenarComboBoxMascotas();
-
+            //Para aplicar el uso de hilos y evitar bloquear la interfaz de usuario
+            //mientras se cargan las mascotas desde la base de datos
+            actualizarListaMascotas();
         }
 
-        private void CargarMascotasDesdeBaseDeDatos()
+
+        private async Task CargarMascotasAsync()
         {
             try
             {
-                GestorSQL gestorSQL = new GestorSQL();
-                int idDueño = gestorSQL.ObtenerDueñoByIdPersona(idUsuario);
-                mascotas = gestorSQL.ObtenerMascotasByIdPersona(idDueño).ToList();
+                await Task.Run(() =>
+                {
+                    int idDueño = gestorSQL.ObtenerDueñoByIdPersona(idUsuario);
+                    mascotas = gestorSQL.ObtenerMascotasByIdPersona(idDueño).ToList();
+                });
             }
             catch (BaseDeDatosException ex)
             {
@@ -63,25 +64,15 @@ namespace TP_FINAL
             }
         }
 
-
-        private bool GenerarDatoAleatorio()
+        public async void actualizarListaMascotas()
         {
-            Random random = new Random();
-            return random.Next(2) == 0;
-        }
-
-        private void btnGuardarDatos_Click(object sender, EventArgs e)
-        {
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Mascota>));
-            using (TextWriter writer = new StreamWriter("Mascotas.xml"))
-            {
-                serializer.Serialize(writer, mascotas);
-            }
+            await CargarMascotasAsync();
+            RellenarComboBoxMascotas();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmMascota frmMascota = new FrmMascota();
+            FrmMascota frmMascota = new FrmMascota(idUsuario, this);
             frmMascota.Show();
         }
 
@@ -90,6 +81,27 @@ namespace TP_FINAL
             FrmLogin frmLogin = new FrmLogin();
             frmLogin.Show();
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Archivos XML (*.xml)|*.xml";
+            saveFileDialog.Title = "Guardar archivo XML";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string rutaArchivo = saveFileDialog.FileName;
+
+                XmlSerializer serializer = new XmlSerializer(typeof(List<Mascota>));
+                using (TextWriter writer = new StreamWriter(rutaArchivo))
+                {
+                    //SERIALIZACION XML PARA GUARDAR EL OBJETO
+                    serializer.Serialize(writer, mascotas);
+                }
+
+                MessageBox.Show("Archivo XML guardado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfMascota xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Mascota>
+    <IdMascota>3</IdMascota>
+    <nombreMascota>Rocky</nombreMascota>
+    <fechaNacimiento>2021-02-10T00:00:00</fechaNacimiento>
+    <altaMedica>true</altaMedica>
+  </Mascota>
+  <Mascota>
+    <IdMascota>4</IdMascota>
+    <nombreMascota>pepe</nombreMascota>
+    <fechaNacimiento>2023-07-08T00:00:00</fechaNacimiento>
+    <altaMedica>false</altaMedica>
+  </Mascota>
+</ArrayOfMascota>
