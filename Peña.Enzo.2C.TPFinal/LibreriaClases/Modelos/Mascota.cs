@@ -15,5 +15,6 @@ namespace LibreriaClases.Modelos
         public bool altaMedica { get; set; }
         public bool estadoCalendario { get; set; }
         public bool estadoEnfermo { get; set; }
+        public int idVeterinario { get; set; }
     }
 }

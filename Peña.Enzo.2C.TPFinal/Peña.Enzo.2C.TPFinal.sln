@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TP_FINAL", "TP_FINAL\TP_FIN
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibreriaClases", "LibreriaClases\LibreriaClases.csproj", "{464D58D9-418D-4541-BCB1-72BC245A4539}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebasUnitarias", "PruebasUnitarias\PruebasUnitarias.csproj", "{5EED5349-FA03-49E1-82F1-FDD79967CC99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{464D58D9-418D-4541-BCB1-72BC245A4539}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{464D58D9-418D-4541-BCB1-72BC245A4539}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{464D58D9-418D-4541-BCB1-72BC245A4539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EED5349-FA03-49E1-82F1-FDD79967CC99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EED5349-FA03-49E1-82F1-FDD79967CC99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EED5349-FA03-49E1-82F1-FDD79967CC99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EED5349-FA03-49E1-82F1-FDD79967CC99}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

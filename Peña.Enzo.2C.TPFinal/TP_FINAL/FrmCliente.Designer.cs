@@ -40,6 +40,7 @@
             pictureBox1=new PictureBox();
             btnVolverMenu=new Button();
             lblCalendario=new Label();
+            lblVeterinario=new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -111,7 +112,7 @@
             // 
             // button1
             // 
-            button1.Location=new Point(313, 146);
+            button1.Location=new Point(208, 227);
             button1.Name="button1";
             button1.Size=new Size(112, 23);
             button1.TabIndex=9;
@@ -121,7 +122,7 @@
             // 
             // button2
             // 
-            button2.Location=new Point(17, 190);
+            button2.Location=new Point(17, 227);
             button2.Name="button2";
             button2.Size=new Size(171, 23);
             button2.TabIndex=10;
@@ -141,7 +142,7 @@
             // 
             // btnVolverMenu
             // 
-            btnVolverMenu.Location=new Point(313, 192);
+            btnVolverMenu.Location=new Point(343, 227);
             btnVolverMenu.Name="btnVolverMenu";
             btnVolverMenu.Size=new Size(112, 23);
             btnVolverMenu.TabIndex=12;
@@ -158,12 +159,22 @@
             lblCalendario.TabIndex=15;
             lblCalendario.Text="estadoVacunas";
             // 
+            // lblVeterinario
+            // 
+            lblVeterinario.AutoSize=true;
+            lblVeterinario.Location=new Point(17, 189);
+            lblVeterinario.Name="lblVeterinario";
+            lblVeterinario.Size=new Size(63, 15);
+            lblVeterinario.TabIndex=16;
+            lblVeterinario.Text="veterinario";
+            // 
             // FrmCliente
             // 
             AutoScaleDimensions=new SizeF(7F, 15F);
             AutoScaleMode=AutoScaleMode.Font;
             BackColor=SystemColors.ActiveCaption;
-            ClientSize=new Size(504, 241);
+            ClientSize=new Size(468, 260);
+            Controls.Add(lblVeterinario);
             Controls.Add(lblCalendario);
             Controls.Add(btnVolverMenu);
             Controls.Add(pictureBox1);
@@ -197,5 +208,6 @@
         private PictureBox pictureBox1;
         private Button btnVolverMenu;
         private Label lblCalendario;
+        private Label lblVeterinario;
     }
 }

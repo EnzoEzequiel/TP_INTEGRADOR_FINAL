@@ -62,10 +62,22 @@ namespace TP_FINAL
                 bool calendarioVacunas = mascotaSeleccionada.estadoCalendario;
                 bool enfermo = mascotaSeleccionada.estadoEnfermo;
                 bool altaMedica = mascotaSeleccionada.altaMedica;
-
+                string buscarSectorVeterinario = "select Especialidad from Veterinarios where IdVeterinario ="+mascotaSeleccionada.idVeterinario.ToString();
+                string sectorVeterinario = gestorSQL.EjecutarQuery(buscarSectorVeterinario, command =>
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return reader["Especialidad"].ToString();
+                        }
+                        return null;
+                    }
+                });
                 lblCalendario.Text = $"Calendario de vacunas: {(calendarioVacunas ? "Completo" : "Incompleto")}";
                 lblEnfermo.Text = $"Estado de salud: {(enfermo ? "Enfermo" : "Sano")}";
                 lblAlta.Text = $"Estado de alta médica: {(altaMedica ? "Dado de alta" : "No dado de alta")}";
+                lblVeterinario.Text = $"Sector de tratamiento: {sectorVeterinario}";
             }
         }
         private void RellenarComboBoxMascotas()

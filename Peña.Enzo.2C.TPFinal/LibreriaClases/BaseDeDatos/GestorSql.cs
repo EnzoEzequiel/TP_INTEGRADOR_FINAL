@@ -10,8 +10,13 @@ namespace LibreriaClases.DataBase
     public class GestorSQL
     {
         private static readonly string stringConnection = "Server=DESKTOP-FBL3OPJ\\SQLEXPRESS;Database=veterinaria;Trusted_Connection=True;TrustServerCertificate=Yes;";
-
-        public void EjecutarQuery<T>(string query, Func<SqlCommand, T> action)
+        /// <summary>
+        /// Ejecuta una consulta SQL con un delegado para realizar acciones específicas.
+        /// </summary>
+        /// <typeparam name="T">Tipo de retorno del delegado.</typeparam>
+        /// <param name="query">Consulta SQL a ejecutar.</param>
+        /// <param name="action">Delegado que realiza acciones específicas con el comando SQL.</param>
+        public T EjecutarQuery<T>(string query, Func<SqlCommand, T> action)
         {
             using (SqlConnection connection = new SqlConnection(stringConnection))
             {
@@ -20,7 +25,7 @@ namespace LibreriaClases.DataBase
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        action(command);
+                        return action(command);
                     }
                 }
                 catch (Exception ex)
@@ -30,7 +35,11 @@ namespace LibreriaClases.DataBase
             }
         }
 
-        
+        /// <summary>
+        /// Obtiene el ID del dueño asociado a un ID de persona.
+        /// </summary>
+        /// <param name="id">ID de persona.</param>
+        /// <returns>ID del dueño.</returns>
         public int ObtenerDueñoByIdPersona(int id)
         {
             using (SqlConnection connection = new SqlConnection(stringConnection))
@@ -67,7 +76,11 @@ namespace LibreriaClases.DataBase
                 return 0;
             }
         }
-
+        /// <summary>
+        /// Obtiene una lista de mascotas asociadas a un ID de persona.
+        /// </summary>
+        /// <param name="id">ID de persona.</param>
+        /// <returns>Lista de mascotas.</returns>
         public IEnumerable<Mascota> ObtenerMascotasByIdPersona(int id)
         {
             using (SqlConnection connection = new SqlConnection(stringConnection))
@@ -91,7 +104,8 @@ namespace LibreriaClases.DataBase
                                     fechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"]),
                                     altaMedica = Convert.IsDBNull(reader["AltaMedica"]) ? false : Convert.ToBoolean(reader["AltaMedica"]),
                                     estadoCalendario = Convert.IsDBNull(reader["VacunasAplicadas"]) ? false : Convert.ToBoolean(reader["VacunasAplicadas"]),
-                                    estadoEnfermo = Convert.IsDBNull(reader["EstadoEnfermo"]) ? false : Convert.ToBoolean(reader["EstadoEnfermo"])
+                                    estadoEnfermo = Convert.IsDBNull(reader["EstadoEnfermo"]) ? false : Convert.ToBoolean(reader["EstadoEnfermo"]),
+                                    idVeterinario = Convert.ToInt32(reader["IdVeterinario"])
 
                                 };
 
@@ -113,69 +127,12 @@ namespace LibreriaClases.DataBase
                 return listaMascotas;
             }
         }
-
-
-        public IEnumerable<T> ObtenerTodos<T>()
-        {
-            using (SqlConnection connection = new SqlConnection(stringConnection))
-            {
-                string nombreTabla = typeof(T).Name;
-
-                string query = $"SELECT * FROM {nombreTabla}";
-
-                List<T> listaElementos = new List<T>();
-
-                try
-                {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                // Lógica de mapeo de datos desde el SqlDataReader al objeto T
-                                // Debes implementar esta lógica según tus necesidades
-                                T elemento = default;
-                                listaElementos.Add(elemento);
-                            }
-                            reader.Close();
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new BaseDeDatosException("Error al obtener todos los elementos", ex);
-                }
-
-                return listaElementos;
-            }
-        }
-
-        public bool ExisteMascotaPorNombreYNacimiento(string nombre, string fNacimiento)
-        {
-
-            using (SqlConnection connection = new SqlConnection(stringConnection))
-            {
-                string query = $"SELECT IdPersona FROM Personas WHERE Nombre = '{nombre}' AND FechaNacimiento = '{fNacimiento}'";
-
-                try
-                {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        object result = command.ExecuteScalar();
-                        return false;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new BaseDeDatosException("Error al verificar usuario por correo", ex);
-                }
-                finally { connection.Close(); }
-            }
-        }
-
+        /// <summary>
+        /// Verifica la existencia de un usuario por su correo electrónico y contraseña.
+        /// </summary>
+        /// <param name="correoElectronico">Correo electrónico del usuario.</param>
+        /// <param name="contra">Contraseña del usuario.</param>
+        /// <returns>ID del usuario si existe, de lo contrario, 0.</returns>
         public int ExisteUsuarioPorCorreo(string correoElectronico, string contra)
         {
             using (SqlConnection connection = new SqlConnection(stringConnection))
@@ -198,7 +155,11 @@ namespace LibreriaClases.DataBase
                 finally { connection.Close(); }
             }
         }
-
+        /// <summary>
+        /// Obtiene el nombre de un usuario por su ID.
+        /// </summary>
+        /// <param name="idUsuario">ID del usuario.</param>
+        /// <returns>Nombre del usuario.</returns>
         public string ObtenerNombrePorId(int idUsuario)
         {
             using (SqlConnection connection = new SqlConnection(stringConnection))

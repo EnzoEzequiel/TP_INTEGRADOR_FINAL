@@ -45,11 +45,16 @@ namespace TP_FINAL
         {
             try
             {
+                Random random = new Random();
                 string nombre = txtBoxNombreMascotaNueva.Text;
                 string especie = txtBoxEspecieMascotaNueva.Text;
                 DateTime fNacimiento = dateTimePicker1.Value;
                 bool altaMedica = false;
                 bool vacunasAplicadas = false;
+                bool estadoEnfermo = true;
+                //ya que no tengo el tiempo para generar una logica especifica para asignar un doctor dependiendo el tipo de enfermedad
+                //prefiero simplemente asignarle uno de los dos veterinarios y listo
+                int idVeterinario = random.Next(1, 3);
 
                 if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(especie) || fNacimiento==null)
                 {
@@ -62,7 +67,6 @@ namespace TP_FINAL
 
                 if (idDueño==0)
                 {
-                    Random random = new Random();
                     long numeroAleatorioLong = random.Next(1000000000, int.MaxValue) * 1000000000L + random.Next(1000000000);
                     string numeroAleatorio = numeroAleatorioLong.ToString();
                     string queryInsertarDueño = $"INSERT INTO Dueños (Telefono, IdPersona) VALUES ('{numeroAleatorio}', '{idUsuario}')";
@@ -70,11 +74,11 @@ namespace TP_FINAL
                     idDueño = gestorSQL.ObtenerDueñoByIdPersona(idUsuario);
                 }
 
-                string queryInsertUsuario = $"INSERT INTO Mascotas (Nombre, Especie, FechaNacimiento, IdDueño, AltaMedica, VacunasAplicadas) VALUES ('{nombre}', '{especie}', '{fNacimiento.ToString("yyyy-MM-dd")}', '{idDueño}', '{altaMedica}', '{vacunasAplicadas}')";
+                string queryInsertUsuario = $"INSERT INTO Mascotas (Nombre, Especie, FechaNacimiento, IdDueño, AltaMedica, VacunasAplicadas, EstadoEnfermo , IdVeterinario) VALUES ('{nombre}', '{especie}', '{fNacimiento.ToString("yyyy-MM-dd")}', '{idDueño}', '{altaMedica}', '{vacunasAplicadas}', '{estadoEnfermo}', '{idVeterinario}')";
 
                 gestorSQL.EjecutarQuery(queryInsertUsuario, command => command.ExecuteNonQuery());
 
-                MessageBox.Show("Mascota agregada correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Mascota agregada correctamente con veterinario asignado", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 frmCliente.actualizarListaMascotas();
 
