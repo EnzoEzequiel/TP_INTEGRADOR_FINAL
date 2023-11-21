@@ -10,14 +10,6 @@ namespace LibreriaClases.Interfaces
 {
     public interface IVeterinariaRepository
     {
-        void ActualizarMascota(Mascota mascota);
-
-        void EliminarMascota(int id);
-
-        //ObtenerPorId(string nombre,int id);
-
-        IEnumerable<Mascota> ObtenerTodasLasMascotas();
-
         int ExisteUsuarioPorCorreo(string correoElectronico, string contra);
     }
 

@@ -45,7 +45,7 @@ namespace TP_FINAL
                 {
                     string queryInsertUsuario = $"INSERT INTO Personas (Nombre, Email, Direccion, Contraseña) VALUES ('{nombre}', '{correo}', '{dire}', '{contra}')";
 
-                    gestorSQL.EjecutarQuery(queryInsertUsuario);
+                    gestorSQL.EjecutarQuery(queryInsertUsuario, command => command.ExecuteNonQuery());
 
                     MessageBox.Show("Usuario agregado correctamente.", "Usuario Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

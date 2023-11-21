@@ -60,10 +60,19 @@ namespace TP_FINAL
                 GestorSQL gestorSQL = new GestorSQL();
                 int idDueño = gestorSQL.ObtenerDueñoByIdPersona(idUsuario);
 
-                string queryInsertUsuario = $"INSERT INTO Mascotas (Nombre, Especie, FechaNacimiento, IdDueño, AltaMedica, VacunasAplicadas) " +
-                            $"VALUES ('{nombre}', '{especie}', '{fNacimiento.ToString("yyyy-MM-dd")}', '{idDueño}', '{altaMedica}', '{vacunasAplicadas}')";
+                if (idDueño==0)
+                {
+                    Random random = new Random();
+                    long numeroAleatorioLong = random.Next(1000000000, int.MaxValue) * 1000000000L + random.Next(1000000000);
+                    string numeroAleatorio = numeroAleatorioLong.ToString();
+                    string queryInsertarDueño = $"INSERT INTO Dueños (Telefono, IdPersona) VALUES ('{numeroAleatorio}', '{idUsuario}')";
+                    gestorSQL.EjecutarQuery(queryInsertarDueño, command => command.ExecuteNonQuery());
+                    idDueño = gestorSQL.ObtenerDueñoByIdPersona(idUsuario);
+                }
 
-                gestorSQL.EjecutarQuery(queryInsertUsuario);
+                string queryInsertUsuario = $"INSERT INTO Mascotas (Nombre, Especie, FechaNacimiento, IdDueño, AltaMedica, VacunasAplicadas) VALUES ('{nombre}', '{especie}', '{fNacimiento.ToString("yyyy-MM-dd")}', '{idDueño}', '{altaMedica}', '{vacunasAplicadas}')";
+
+                gestorSQL.EjecutarQuery(queryInsertUsuario, command => command.ExecuteNonQuery());
 
                 MessageBox.Show("Mascota agregada correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

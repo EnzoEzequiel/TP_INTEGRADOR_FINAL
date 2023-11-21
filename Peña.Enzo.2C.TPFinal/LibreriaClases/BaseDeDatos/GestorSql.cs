@@ -11,7 +11,7 @@ namespace LibreriaClases.DataBase
     {
         private static readonly string stringConnection = "Server=DESKTOP-FBL3OPJ\\SQLEXPRESS;Database=veterinaria;Trusted_Connection=True;TrustServerCertificate=Yes;";
 
-        public void EjecutarQuery(string query)
+        public void EjecutarQuery<T>(string query, Func<SqlCommand, T> action)
         {
             using (SqlConnection connection = new SqlConnection(stringConnection))
             {
@@ -20,7 +20,7 @@ namespace LibreriaClases.DataBase
                     connection.Open();
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.ExecuteNonQuery();
+                        action(command);
                     }
                 }
                 catch (Exception ex)
@@ -30,39 +30,6 @@ namespace LibreriaClases.DataBase
             }
         }
 
-        public T ObtenerElementoPorId<T>(string nombreTabla, int id)
-        {
-            using (SqlConnection connection = new SqlConnection(stringConnection))
-            {
-
-                string query = $"SELECT * FROM {nombreTabla} WHERE Id{nombreTabla} = {id}";
-
-                try
-                {
-                    connection.Open();
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                // Lógica de mapeo de datos desde el SqlDataReader al objeto T
-                                // Debes implementar esta lógica según tus necesidades
-
-                                return default; // Devuelve el objeto mapeado
-                            }
-                            reader.Close();
-                        }
-
-                    }
-                }
-                catch (Exception ex)
-                {
-                    throw new BaseDeDatosException("Error al obtener elemento por id", ex);
-                }
-            }
-            return default;
-        }
         
         public int ObtenerDueñoByIdPersona(int id)
         {
@@ -81,7 +48,7 @@ namespace LibreriaClases.DataBase
                             {
                                 reader.Close();
                                 object result = command.ExecuteScalar();
-                                
+                                //caso contrario me devuelve 0
                                 return result != null ? Convert.ToInt32(result) : 0;
 
                             }
