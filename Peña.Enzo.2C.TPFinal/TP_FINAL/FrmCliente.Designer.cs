@@ -41,6 +41,7 @@
             btnVolverMenu=new Button();
             lblCalendario=new Label();
             lblVeterinario=new Label();
+            lblInfoMascota=new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             // 
             label1.AutoSize=true;
             label1.Font=new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location=new Point(99, 26);
+            label1.Location=new Point(99, 9);
             label1.Name="label1";
             label1.Size=new Size(142, 32);
             label1.TabIndex=0;
@@ -86,7 +87,7 @@
             // 
             lblNombreCliente.AutoSize=true;
             lblNombreCliente.Font=new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblNombreCliente.Location=new Point(238, 28);
+            lblNombreCliente.Location=new Point(234, 11);
             lblNombreCliente.Name="lblNombreCliente";
             lblNombreCliente.Size=new Size(165, 30);
             lblNombreCliente.TabIndex=4;
@@ -168,12 +169,22 @@
             lblVeterinario.TabIndex=16;
             lblVeterinario.Text="veterinario";
             // 
+            // lblInfoMascota
+            // 
+            lblInfoMascota.AutoSize=true;
+            lblInfoMascota.Location=new Point(99, 57);
+            lblInfoMascota.Name="lblInfoMascota";
+            lblInfoMascota.Size=new Size(207, 15);
+            lblInfoMascota.TabIndex=17;
+            lblInfoMascota.Text="Informacion de mascota seleccionada";
+            // 
             // FrmCliente
             // 
             AutoScaleDimensions=new SizeF(7F, 15F);
             AutoScaleMode=AutoScaleMode.Font;
             BackColor=SystemColors.ActiveCaption;
             ClientSize=new Size(468, 260);
+            Controls.Add(lblInfoMascota);
             Controls.Add(lblVeterinario);
             Controls.Add(lblCalendario);
             Controls.Add(btnVolverMenu);
@@ -209,5 +220,6 @@
         private Button btnVolverMenu;
         private Label lblCalendario;
         private Label lblVeterinario;
+        private Label lblInfoMascota;
     }
 }

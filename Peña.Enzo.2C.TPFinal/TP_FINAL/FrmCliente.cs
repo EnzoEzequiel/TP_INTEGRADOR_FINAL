@@ -19,6 +19,7 @@ namespace TP_FINAL
 {
     public partial class FrmCliente : Form
     {
+        private FrmMascota frmMascota;
         private List<Mascota> mascotas = new List<Mascota>();
         private int idUsuario;
         public GestorSQL gestorSQL = new GestorSQL();
@@ -59,6 +60,7 @@ namespace TP_FINAL
         {
             if (comboBox1.SelectedItem is Mascota mascotaSeleccionada)
             {
+                string informacionMascota = ObtenerInformacionMascota(mascotaSeleccionada);
                 bool calendarioVacunas = mascotaSeleccionada.estadoCalendario;
                 bool enfermo = mascotaSeleccionada.estadoEnfermo;
                 bool altaMedica = mascotaSeleccionada.altaMedica;
@@ -78,6 +80,7 @@ namespace TP_FINAL
                 lblEnfermo.Text = $"Estado de salud: {(enfermo ? "Enfermo" : "Sano")}";
                 lblAlta.Text = $"Estado de alta médica: {(altaMedica ? "Dado de alta" : "No dado de alta")}";
                 lblVeterinario.Text = $"Sector de tratamiento: {sectorVeterinario}";
+                lblInfoMascota.Text = informacionMascota;
             }
         }
         private void RellenarComboBoxMascotas()
@@ -94,6 +97,12 @@ namespace TP_FINAL
         {
             await CargarMascotasAsync();
             RellenarComboBoxMascotas();
+        }
+
+        // Método de extensión que obtiene la información de la mascota
+        public static string ObtenerInformacionMascota(Mascota mascota)
+        {
+            return $"Nombre de mascota seleccionada: {mascota.nombreMascota}";
         }
 
         private void button2_Click(object sender, EventArgs e)

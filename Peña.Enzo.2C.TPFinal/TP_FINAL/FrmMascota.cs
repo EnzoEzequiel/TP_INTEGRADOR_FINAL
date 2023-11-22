@@ -20,13 +20,16 @@ namespace TP_FINAL
     public partial class FrmMascota : Form
     {
         private int idUsuario;
-        public event EventHandler MascotaAgregada;
         private FrmCliente frmCliente;
+
+        // Declaración del evento utilizando EventHandler
+        public event EventHandler MascotaAgregada;
+
         public FrmMascota(int idUsuario, FrmCliente frmCliente)
         {
             InitializeComponent();
             this.idUsuario = idUsuario;
-            this.frmCliente=frmCliente;
+            this.frmCliente = frmCliente;
         }
 
         private void LimpiarCampos()
@@ -56,7 +59,7 @@ namespace TP_FINAL
                 //prefiero simplemente asignarle uno de los dos veterinarios y listo
                 int idVeterinario = random.Next(1, 3);
 
-                if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(especie) || fNacimiento==null)
+                if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(especie) || fNacimiento == null)
                 {
                     MessageBox.Show("Por favor, complete todos los campos.", "Campos Incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -65,7 +68,7 @@ namespace TP_FINAL
                 GestorSQL gestorSQL = new GestorSQL();
                 int idDueño = gestorSQL.ObtenerDueñoByIdPersona(idUsuario);
 
-                if (idDueño==0)
+                if (idDueño == 0)
                 {
                     long numeroAleatorioLong = random.Next(1000000000, int.MaxValue) * 1000000000L + random.Next(1000000000);
                     string numeroAleatorio = numeroAleatorioLong.ToString();
@@ -82,18 +85,26 @@ namespace TP_FINAL
 
                 frmCliente.actualizarListaMascotas();
 
+                // Lanzamiento del evento al agregar la mascota
+                OnMascotaAgregada(EventArgs.Empty);
+
                 this.Close();
-                
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al agregar la mascota: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-      
+
         private void btnLimpiarCamposMascota_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
+        }
+
+        // Método protegido para lanzar el evento MascotaAgregada
+        protected virtual void OnMascotaAgregada(EventArgs e)
+        {
+            MascotaAgregada?.Invoke(this, e);
         }
     }
 }
