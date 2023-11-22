@@ -23,6 +23,7 @@ namespace TP_FINAL
         private List<Mascota> mascotas = new List<Mascota>();
         private int idUsuario;
         public GestorSQL gestorSQL = new GestorSQL();
+        delegate string ObjetoDelegado();
 
         public FrmCliente(int idUsuario)
         {
@@ -60,6 +61,7 @@ namespace TP_FINAL
         {
             if (comboBox1.SelectedItem is Mascota mascotaSeleccionada)
             {
+                ObjetoDelegado delegado = new ObjetoDelegado(Mascota.EspecieDescripcion);
                 string informacionMascota = ObtenerInformacionMascota(mascotaSeleccionada);
                 bool calendarioVacunas = mascotaSeleccionada.estadoCalendario;
                 bool enfermo = mascotaSeleccionada.estadoEnfermo;
@@ -81,6 +83,7 @@ namespace TP_FINAL
                 lblAlta.Text = $"Estado de alta médica: {(altaMedica ? "Dado de alta" : "No dado de alta")}";
                 lblVeterinario.Text = $"Sector de tratamiento: {sectorVeterinario}";
                 lblInfoMascota.Text = informacionMascota;
+                lblDescripcionMascota.Text = delegado()+mascotaSeleccionada.especie;
             }
         }
         private void RellenarComboBoxMascotas()

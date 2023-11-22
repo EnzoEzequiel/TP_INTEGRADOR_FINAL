@@ -42,6 +42,7 @@
             lblCalendario=new Label();
             lblVeterinario=new Label();
             lblInfoMascota=new Label();
+            lblDescripcionMascota=new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -69,7 +70,7 @@
             // 
             label3.AutoSize=true;
             label3.Font=new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location=new Point(313, 79);
+            label3.Location=new Point(288, 79);
             label3.Name="label3";
             label3.Size=new Size(142, 21);
             label3.TabIndex=2;
@@ -78,9 +79,9 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled=true;
-            comboBox1.Location=new Point(313, 111);
+            comboBox1.Location=new Point(266, 111);
             comboBox1.Name="comboBox1";
-            comboBox1.Size=new Size(142, 23);
+            comboBox1.Size=new Size(189, 23);
             comboBox1.TabIndex=3;
             // 
             // lblNombreCliente
@@ -178,12 +179,22 @@
             lblInfoMascota.TabIndex=17;
             lblInfoMascota.Text="Informacion de mascota seleccionada";
             // 
+            // lblDescripcionMascota
+            // 
+            lblDescripcionMascota.AutoSize=true;
+            lblDescripcionMascota.Location=new Point(288, 147);
+            lblDescripcionMascota.Name="lblDescripcionMascota";
+            lblDescripcionMascota.Size=new Size(133, 15);
+            lblDescripcionMascota.TabIndex=18;
+            lblDescripcionMascota.Text="Descripcion de Mascota";
+            // 
             // FrmCliente
             // 
             AutoScaleDimensions=new SizeF(7F, 15F);
             AutoScaleMode=AutoScaleMode.Font;
             BackColor=SystemColors.ActiveCaption;
             ClientSize=new Size(468, 260);
+            Controls.Add(lblDescripcionMascota);
             Controls.Add(lblInfoMascota);
             Controls.Add(lblVeterinario);
             Controls.Add(lblCalendario);
@@ -221,5 +232,6 @@
         private Label lblCalendario;
         private Label lblVeterinario;
         private Label lblInfoMascota;
+        private Label lblDescripcionMascota;
     }
 }

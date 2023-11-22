@@ -101,6 +101,7 @@ namespace LibreriaClases.DataBase
                                 {
                                     IdMascota = Convert.ToInt32(reader["IdMascota"]),
                                     nombreMascota = reader["Nombre"].ToString(),
+                                    especie = reader["Especie"].ToString(),
                                     fechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"]),
                                     altaMedica = Convert.IsDBNull(reader["AltaMedica"]) ? false : Convert.ToBoolean(reader["AltaMedica"]),
                                     estadoCalendario = Convert.IsDBNull(reader["VacunasAplicadas"]) ? false : Convert.ToBoolean(reader["VacunasAplicadas"]),

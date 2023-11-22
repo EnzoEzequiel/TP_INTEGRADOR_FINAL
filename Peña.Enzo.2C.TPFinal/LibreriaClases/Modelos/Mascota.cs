@@ -11,11 +11,16 @@ namespace LibreriaClases.Modelos
     {
         public int IdMascota { get; set; }
         public string nombreMascota { get; set; }
+        public string especie { get; set; }
         public DateTime fechaNacimiento { get; set; }
         public bool altaMedica { get; set; }
         public bool estadoCalendario { get; set; }
         public bool estadoEnfermo { get; set; }
         public int idVeterinario { get; set; }
 
+        public static string EspecieDescripcion()
+        {
+            return "Especie de la mascota: ";
+        }
     }
 }
