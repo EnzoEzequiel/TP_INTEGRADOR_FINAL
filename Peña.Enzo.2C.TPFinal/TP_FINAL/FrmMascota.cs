@@ -85,9 +85,6 @@ namespace TP_FINAL
 
                 frmCliente.actualizarListaMascotas();
 
-                // Lanzamiento del evento al agregar la mascota
-                OnMascotaAgregada(EventArgs.Empty);
-
                 this.Close();
             }
             catch (Exception ex)
@@ -99,12 +96,6 @@ namespace TP_FINAL
         private void btnLimpiarCamposMascota_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
-        }
-
-        // Método protegido para lanzar el evento MascotaAgregada
-        protected virtual void OnMascotaAgregada(EventArgs e)
-        {
-            MascotaAgregada?.Invoke(this, e);
         }
     }
 }
